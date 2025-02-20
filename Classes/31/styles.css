@@ -1,0 +1,64 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Стили для карточки */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при наведении на карточку */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для изображения */
+.card-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+/* Эффект при наведении на изображение */
+.card:hover .card-image {
+    border-color: #ff6f61;
+}
+
+/* Стили для текста */
+.card h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Стили для strong тега */
+.card p strong {
+    color: #007bff;
+}
