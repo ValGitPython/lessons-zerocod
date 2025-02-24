@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <!-- Меню -->
-    <nav>
-        <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/blog">Блог</a></li>
-            <li><a href="/contacts">Контакты</a></li>
-        </ul>
-    </nav>
+{% extends "base.html" %}
 
-    <!-- Основной контент -->
-    <h1>Контакты</h1>
-    <p>Здесь вы можете найти информацию о нашем магазине домашних растений:</p>
-    <ul>
-        <li><strong>Адрес:</strong> г. Москва, ул. Цветочная, д. 15</li>
-        <li><strong>Телефон:</strong> +7 (495) 123-45-67</li>
-        <li><strong>Часы работы:</strong> Пн-Вс, 10:00–20:00</li>
-    </ul>
-    <p>Заходите к нам в гости или свяжитесь с нами по телефону для заказа растений!</p>
-</body>
-</html>
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Контакты</h1>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <p>Здесь вы можете найти информацию о нашем магазине домашних растений:</p>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Адрес:</strong> г. Москва, ул. Цветочная, д. 15</li>
+            <li class="list-group-item"><strong>Телефон:</strong> +7 (495) 123-45-67</li>
+            <li class="list-group-item"><strong>Часы работы:</strong> Пн-Вс, 10:00–20:00</li>
+        </ul>
+        <p>Заходите к нам в гости или свяжитесь с нами по телефону для заказа растений!</p>
+    </div>
+</div>
+{% endblock %}
