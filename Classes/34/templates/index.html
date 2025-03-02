@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Заполните анкету</h2>
+        <form method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="name" class="form-label">Имя:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+                <div class="invalid-feedback">Пожалуйста, введите ваше имя.</div>
+            </div>
+            <div class="mb-3">
+                <label for="city" class="form-label">Город:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+                <div class="invalid-feedback">Пожалуйста, введите ваш город.</div>
+            </div>
+            <div class="mb-3">
+                <label for="hobby" class="form-label">Хобби:</label>
+                <input type="text" class="form-control" id="hobby" name="hobby" required>
+                <div class="invalid-feedback">Пожалуйста, укажите ваши хобби.</div>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Возраст:</label>
+                <input type="number" class="form-control" id="age" name="age" min="1" required>
+                <div class="invalid-feedback">Пожалуйста, укажите ваш возраст.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+
+        <!-- Вывод данных -->
+        {% if user_data %}
+        <div class="mt-5">
+            <h3>Ваши данные:</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Имя: {{ user_data.name }}</li>
+                <li class="list-group-item">Город: {{ user_data.city }}</li>
+                <li class="list-group-item">Хобби: {{ user_data.hobby }}</li>
+                <li class="list-group-item">Возраст: {{ user_data.age }}</li>
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Подключение Bootstrap JS и Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Валидация формы
+        (function () {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+</html>
